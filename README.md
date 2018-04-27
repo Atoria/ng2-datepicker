@@ -1,27 +1,21 @@
-# ng2-datepicker
+# ng2-atrium-datepicker
 Angular2 Datepicker Component
 
-***ng2-datepicker*** is a datepicker component for Angular2.
-
-## Demo
-
-[http://ng2-datepicker.jankuri.com](http://ng2-datepicker.jankuri.com)
-
-Looking for a date range picker? Check this one: [http://ng-daterangepicker.jankuri.com](http://ng-daterangepicker.jankuri.com)
+***ng2-atrium-datepicker*** is a datepicker component for Angular2.
 
 ## Installation:
 
-Install ng2-datepicker via `npm`
+Install ng2-atrium-datepicker via `npm`
 
 ````shell
-npm install ng2-datepicker --save
+npm install ng2-atrium-datepicker --save
 ````
 
 ## Integration
 
 ```ts
 // app.module.ts
-import { DatePickerModule } from 'ng2-datepicker';
+import { DatePickerModule } from 'ng2-atrium-datepicker';
 
 @NgModule({
   ...
@@ -32,7 +26,7 @@ export class AppModule { }
 
 // app.component.ts
 import { Component } from '@angular/core';
-import { DatePickerOptions, DateModel } from 'ng2-datepicker';
+import { DatePickerOptions, DateModel } from 'ng2-atrium-datepicker';
 
 @Component({
   selector: 'app-root',
@@ -51,12 +45,10 @@ export class AppComponent {
 <ng2-datepicker [options]="options" [(ngModel)]="date"></ng2-datepicker>
 ```
 
-For more info about options please see [this](https://github.com/jkuri/ng2-datepicker/blob/master/src/ng2-datepicker/ng2-datepicker.component.ts#L41-L53).
-
 ## Run Included Demo
 
 ```shell
-git clone https://github.com/jkuri/ng2-datepicker.git --depth 1
+git clone https://github.com/sam-blackfly/ng2-datepicker.git --depth 1
 cd ng2-datepicker
 npm install
 npm start
