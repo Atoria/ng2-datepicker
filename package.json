@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jkuri/ng2-datepicker.git"
+    "url": "https://github.com/sam-blackfly/ng2-datepicker.git"
   },
   "keywords": [
     "angular",
@@ -30,11 +30,10 @@
     "date",
     "component"
   ],
-  "author": "Jan Kuri <jkuri88@gmail.com>",
   "bugs": {
-    "url": "https://github.com/jkuri/ng2-datepicker/issues"
+    "url": "https://github.com/sam-blackfly/ng2-datepicker/issues"
   },
-  "homepage": "https://github.com/jkuri/ng2-datepicker#readme",
+  "homepage": "https://github.com/sam-blackfly/ng2-datepicker#readme",
   "main": "./lib-dist/ng2-datepicker.module.js",
   "module": "./lib-dist/ng2-datepicker.module.js",
   "types": "./lib-dist/ng2-datepicker.module.d.ts",
