@@ -3,7 +3,8 @@
     <div class="container">
       <div class="columns is-multiline">
         <div class="column is-4 is-offset-4 has-text-centered">
-          <ng2-datepicker [options]="options" [(ngModel)]="date"></ng2-datepicker>
+          <ng2-datepicker #datePicker [options]="options" [(ngModel)]="date"></ng2-datepicker>
+          <button class="button" (click)="datePicker.toggle()">Open Datepicker</button>
         </div>
       </div>
     </div>

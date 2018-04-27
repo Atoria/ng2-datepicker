@@ -7,7 +7,7 @@ import { DateModel, DatePickerOptions } from '../ng2-datepicker/ng2-datepicker.c
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  date: DateModel;
+  date: DateModel = new DateModel();
   options: DatePickerOptions;
 
   constructor() {

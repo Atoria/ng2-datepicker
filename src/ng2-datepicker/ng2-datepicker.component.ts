@@ -101,7 +101,7 @@ export const CALENDAR_VALUE_ACCESSOR: any = {
   selector: 'ng2-datepicker',
   templateUrl: './ng2-datepicker.component.html',
   styleUrls: ['./ng2-datepicker.component.sass'],
-  providers: [CALENDAR_VALUE_ACCESSOR],
+  providers: [CALENDAR_VALUE_ACCESSOR]
 })
 export class DatePickerComponent implements ControlValueAccessor, OnInit {
   @Input() options: IDatePickerOptions;
@@ -110,20 +110,21 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
 
   date: DateModel;
 
-  opened: boolean;
-  currentDate: moment.Moment;
-  days: CalendarDate[];
-  years: number[];
-  yearPicker: boolean;
-  scrollOptions: SlimScrollOptions;
+  public opened = false;
+  public currentDate: moment.Moment;
+  public days: CalendarDate[];
+  public years: number[];
+  public yearPicker: boolean;
+  public scrollOptions: SlimScrollOptions;
+
   nameOfweekday(index: number): string{
     let locale = (this.options && this.options.locale)? this.options.locale : "en";
     let additinal = (this.options && this.options.firstWeekdaySunday)?6:0;
     return moment("2013W06" + ( (index + additinal) % 7 + 1 ) ).lang(locale).format("dd");
   }
 
-  minDate: moment.Moment | any;
-  maxDate: moment.Moment | any;
+  public minDate: moment.Moment | any;
+  public maxDate: moment.Moment | any;
 
   private onTouchedCallback: () => void = () => { };
   private onChangeCallback: (_: any) => void = () => { };
@@ -172,6 +173,9 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
   }
 
   ngOnInit() {
+    // App level configurations and settings
+    moment['suppressDeprecationWarnings'] = true;
+
     this.options = new DatePickerOptions(this.options);
     this.scrollOptions = {
       barBackground: '#C9C9C9',
@@ -200,16 +204,6 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
     this.generateYears();
     this.generateCalendar();
     this.outputEvents.emit({ type: 'default', data: 'init' });
-
-    if (typeof window !== 'undefined') {
-      const body = document.querySelector('body');
-      body.addEventListener('click', e => {
-        if (!this.opened || !e.target) { return; };
-        if (this.el.nativeElement !== e.target && !this.el.nativeElement.contains((<any>e.target))) {
-          this.close();
-        }
-      }, false);
-    }
 
     if (this.inputEvents) {
       this.inputEvents.subscribe((e: any) => {
