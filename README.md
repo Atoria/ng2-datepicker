@@ -1,21 +1,21 @@
-# ng2-atrium-datepicker
+# ng2-datepicker
 Angular2 Datepicker Component
 
-***ng2-atrium-datepicker*** is a datepicker component for Angular2.
+***ng2-datepicker*** is a datepicker component for Angular2.
 
 ## Installation:
 
-Install ng2-atrium-datepicker via `npm`
+Install ng2-datepicker via `npm`
 
 ````shell
-npm install ng2-atrium-datepicker --save
+npm install ng2-datepicker --save
 ````
 
 ## Integration
 
 ```ts
 // app.module.ts
-import { DatePickerModule } from 'ng2-atrium-datepicker';
+import { DatePickerModule } from 'ng2-datepicker';
 
 @NgModule({
   ...
@@ -26,7 +26,7 @@ export class AppModule { }
 
 // app.component.ts
 import { Component } from '@angular/core';
-import { DatePickerOptions, DateModel } from 'ng2-atrium-datepicker';
+import { DatePickerOptions, DateModel } from 'ng2-datepicker';
 
 @Component({
   selector: 'app-root',
